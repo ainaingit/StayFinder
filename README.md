@@ -125,15 +125,17 @@ controllers/: Logic for handling requests.
 
 middleware/: Authentication and error handling middleware.
 
-Frontend
+Frontend/
 
-src/components/: Reusable components like Navbar, Card, etc.
-
-src/pages/: Page components for routes (e.g., HomePage, PropertyPage).
-
-src/context/: Context API files for state management.
-
-src/utils/: Helper functions and API service files.
+  ├── public/                 # Static files (index.html, favicon, etc.)
+  └── src/
+      ├── assets/             # Images, logos, icons, etc.
+      ├── components/         # Reusable components (Navbar, Card, etc.)
+      ├── context/            # Global state management with React Context API
+      ├── pages/              # Components for pages (HomePage, PropertyPage, etc.)
+      ├── utils/              # Utility functions (API calls, helpers)
+      ├── App.js              # Entry point of the application
+      └── index.js            # React project initialization
 
 🌟 Future Enhancements
 
