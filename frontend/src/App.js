@@ -5,22 +5,11 @@ import Footer from './components/Footer';
 import Contact from './components/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';  // Assure-toi d'importer Routes et Route
-
+import properties from './assets/data'; // Import des propriétés depuis data.js
+import DetailsProperty from './components/DetailsProperty';
+import { Link } from 'react-router-dom'; // Importer Link de react-router-dom
 function App() {
-  const properties = [
-    {
-      name: 'Cozy Apartment in Paris',
-      location: 'Paris, France',
-      price: 120,
-      image: 'https://example.com/image1.jpg',
-    },
-    {
-      name: 'Modern Loft in New York',
-      location: 'New York, USA',
-      price: 250,
-      image: 'https://example.com/image2.jpg',
-    }
-  ];
+  
 
   return (
     <div className="App">
@@ -50,7 +39,7 @@ function App() {
                 <div className="row">
                   {properties.map((property, index) => (
                     <div className="col-md-4 mb-4" key={index}>
-                      <Card property={property} />
+                      <Card property={property} />                  
                     </div>
                   ))}
                 </div>
