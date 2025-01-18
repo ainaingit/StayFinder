@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importer Link pour la navigation
+import { Link } from 'react-router-dom';  // Importer Link pour la navigation
 
 function Card({ property }) {
   return (
@@ -10,9 +10,9 @@ function Card({ property }) {
         <p className="card-text">{property.location}</p>
         <div className="d-flex justify-content-between align-items-center">
           <span className="text-muted">${property.price}/night</span>
-          {/* Utiliser Link pour la navigation vers la page de détails */}
+          {/* Utilisation de Link pour naviguer vers la page de détails */}
           <Link to={`/property/${property.id}`} className="btn btn-primary">
-            See Details
+            See
           </Link>
         </div>
       </div>

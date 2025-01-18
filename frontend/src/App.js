@@ -4,13 +4,11 @@ import Card from './components/Card';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route } from 'react-router-dom';  // Assure-toi d'importer Routes et Route
+import { Routes, Route } from 'react-router-dom';
 import properties from './assets/data'; // Import des propriétés depuis data.js
-import DetailsProperty from './components/DetailsProperty';
-import { Link } from 'react-router-dom'; // Importer Link de react-router-dom
-function App() {
-  
+import DetailsProperty from './components/DetailsProperty';  // Importer le composant DetailsProperty
 
+function App() {
   return (
     <div className="App">
       <Navbar />
@@ -37,9 +35,9 @@ function App() {
               <div className="container mt-5">
                 <h2 className="text-center mb-4">Featured Properties</h2>
                 <div className="row">
-                  {properties.map((property, index) => (
-                    <div className="col-md-4 mb-4" key={index}>
-                      <Card property={property} />                  
+                  {properties.map((property) => (
+                    <div className="col-md-4 mb-4" key={property.id}>
+                      <Card property={property} />
                     </div>
                   ))}
                 </div>
@@ -50,6 +48,12 @@ function App() {
 
         {/* Route de contact */}
         <Route path="/contact" element={<Contact />} />
+
+        {/* Route dynamique pour les détails d'une propriété */}
+        <Route
+          path="/property/:id"  // Utilise l'id dans l'URL
+          element={<DetailsProperty properties={properties} />}
+        />
       </Routes>
 
       <Footer />
