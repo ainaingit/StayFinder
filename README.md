@@ -34,8 +34,6 @@ React.js: Reactive components and state management.
 
 React Router: Multi-page navigation.
 
-Tailwind CSS: Fast and modern design.
-
 Framer Motion: Smooth animations.
 
 Backend
