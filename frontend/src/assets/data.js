@@ -1,4 +1,4 @@
-const properties = [
+const props = [
   {
       id: 1,
       name: 'Cozy Apartment in Paris',
@@ -91,4 +91,4 @@ const properties = [
   },
 ];
 
-export default properties;
+export default props;
