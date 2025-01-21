@@ -44,7 +44,7 @@ MongoDB: Data storage.
 
 External Services
 
-Google Maps API: Interactive maps.
+Leaflet : Maps ( javascript library functions )
 
 Stripe: Secure payments.
 
