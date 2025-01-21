@@ -6,7 +6,9 @@ import Contact from './components/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import properties from './assets/data'; // Import des propriétés depuis data.js
+
 import DetailsProperty from './components/DetailsProperty';  // Importer le composant DetailsProperty
+
 
 function App() {
   return (
