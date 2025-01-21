@@ -16,6 +16,9 @@ const DetailsProperty = ({ properties }) => {
 
   return (
     <div className="container mt-5">
+  <div className="row">
+    {/* Colonne gauche : Détails de la propriété */}
+    <div className="col-md-8">
       <h2>{property.name}</h2>
       <p><strong>Location:</strong> {property.location}</p>
       <p><strong>Price:</strong> ${property.price}</p>
@@ -51,8 +54,16 @@ const DetailsProperty = ({ properties }) => {
         </ul>
       </div>
 
-      {/* Carte */}
-      <div style={{ height: '400px' }}>
+      {/* Bouton de réservation */}
+      <div className="mt-4">
+        <button className="btn btn-danger w-100">Book Now</button>
+      </div>
+    </div>
+
+    {/* Colonne droite : Carte */}
+    <div className="col-md-4">
+      <h4>Location Map</h4>
+      <div style={{ height: '300px' }}>
         <MapContainer
           center={[property.latitude, property.longitude]}
           zoom={13}
@@ -68,6 +79,9 @@ const DetailsProperty = ({ properties }) => {
         </MapContainer>
       </div>
     </div>
+  </div>
+</div>
+
   );
 };
 
