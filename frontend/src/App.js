@@ -29,6 +29,7 @@ function App() {
     fetchProperties();
   }, []);
 
+  
   return (
     <div className="App">
       <Navbar />
@@ -39,39 +40,37 @@ function App() {
           path="/"
           element={
             <>
-              {/* Section de recherche */}
-              <div className="container py-4">
-                <div className="row justify-content-center">
-                  <div className="col-lg-10">
-                    <div className="d-flex align-items-center shadow rounded-pill p-2 bg-white">
-                      {/* Champ "Where" */}
-                      <div className="px-3 border-end">
-                        <span className="d-block fw-bold">Where</span>
-                        <span className="text-muted small">Search destinations</span>
-                      </div>
-                      {/* Champ "Check in" */}
-                      <div className="px-3 border-end">
-                        <span className="d-block fw-bold">Check in</span>
-                        <span className="text-muted small">Add dates</span>
-                      </div>
-                      {/* Champ "Check out" */}
-                      <div className="px-3 border-end">
-                        <span className="d-block fw-bold">Check out</span>
-                        <span className="text-muted small">Add dates</span>
-                      </div>
-                      {/* Champ "Who" */}
-                      <div className="px-3">
-                        <span className="d-block fw-bold">Who</span>
-                        <span className="text-muted small">Add guests</span>
-                      </div>
-                      {/* Bouton de recherche */}
-                      <button className="btn btn-danger rounded-circle ms-auto d-flex align-items-center justify-content-center" style={{ width: "40px", height: "40px" }}>
-                        <i className="fas fa-search text-white"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              {/* Barre de recherche */}
+              <div class="container py-4">
+                  <div class="row justify-content-center">
+                  <div class="col-lg-10">
+              <div class="d-flex align-items-center shadow rounded p-3 bg-white">
+        
+              <div class="px-3">
+                <input type="text"class="form-control"placeholder="Lieu"/>
               </div>
+       
+              <div class="px-3">
+                <input type="text"class="form-control"placeholder="Type"/>
+              </div>
+       
+              <div class="px-3">
+                <input type="date"class="form-control"/>
+              </div>
+      
+              <div class="px-3">
+                <input type="date"class="form-control"/>
+              </div>
+       
+              <button class="btn btn-danger ms-3">
+                <i class="fas fa-search text-white"></i> Search
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
 
               {/* Section des propriétés */}
               <div className="container mt-5">
