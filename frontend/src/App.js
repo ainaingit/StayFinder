@@ -6,6 +6,8 @@ import Contact from './components/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import DetailsProperty from './components/DetailsProperty';  // Importer le composant DetailsProperty
+import AddProperties from './components/AddProperties';
+import API_URL from './config'; // Importer la configuration de l'URL
 
 function App() {
   // Créer un état pour stocker les propriétés
@@ -14,7 +16,7 @@ function App() {
   // Fonction pour récupérer les propriétés depuis l'API
   const fetchProperties = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/properties'); // URL de votre API backend
+      const response = await fetch(`${API_URL}/properties`); // Utiliser l'URL centralisée
       const data = await response.json(); // Convertir la réponse en JSON
       setProperties(data); // Mettre à jour l'état avec les données récupérées
     } catch (error) {
@@ -27,6 +29,7 @@ function App() {
     fetchProperties();
   }, []);
 
+  
   return (
     <div className="App">
       <Navbar />
@@ -37,17 +40,37 @@ function App() {
           path="/"
           element={
             <>
-              {/* Section de recherche */}
-              <div className="container mt-5">
-                <div className="row justify-content-center">
-                  <div className="col-md-6">
-                    <div className="input-group">
-                      <input type="text" className="form-control" placeholder="Search for properties..." />
-                      <button className="btn btn-primary" type="button">Search</button>
-                    </div>
-                  </div>
-                </div>
+              {/* Barre de recherche */}
+              <div class="container py-4">
+                  <div class="row justify-content-center">
+                  <div class="col-lg-10">
+              <div class="d-flex align-items-center shadow rounded p-3 bg-white">
+        
+              <div class="px-3">
+                <input type="text"class="form-control"placeholder="Lieu"/>
               </div>
+       
+              <div class="px-3">
+                <input type="text"class="form-control"placeholder="Type"/>
+              </div>
+       
+              <div class="px-3">
+                <input type="date"class="form-control"/>
+              </div>
+      
+              <div class="px-3">
+                <input type="date"class="form-control"/>
+              </div>
+       
+              <button class="btn btn-danger ms-3">
+                <i class="fas fa-search text-white"></i> Search
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
 
               {/* Section des propriétés */}
               <div className="container mt-5">
@@ -76,6 +99,9 @@ function App() {
           path="/property/:id"  // Utilise l'id dans l'URL pour afficher les détails
           element={<DetailsProperty properties={properties} />}
         />
+        
+        {/* Route d'ajout de propriétés */}
+        <Route path="/addproperties" element={<AddProperties />} />
       </Routes>
 
       <Footer />

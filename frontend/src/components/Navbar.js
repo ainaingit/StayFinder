@@ -20,6 +20,7 @@ function Navbar() {
             <li className="nav-item">
               <Link to="/contact" className="text-white hover:text-indigo-300">Contact</Link>
             </li>
+            <Link to="/Addproperties">Link Text</Link> 
           </ul>
         </div>
       </div>
