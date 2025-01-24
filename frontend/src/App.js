@@ -8,10 +8,12 @@ import { Routes, Route } from 'react-router-dom';
 import DetailsProperty from './components/DetailsProperty';  // Importer le composant DetailsProperty
 import AddProperties from './components/AddProperties';
 import API_URL from './config'; // Importer la configuration de l'URL
+import SearchBar from './components/searchbar';
 
 function App() {
   // Créer un état pour stocker les propriétés
   const [properties, setProperties] = useState([]);
+
 
   // Fonction pour récupérer les propriétés depuis l'API
   const fetchProperties = async () => {
@@ -30,6 +32,7 @@ function App() {
   }, []);
 
   
+
   return (
     <div className="App">
       <Navbar />
@@ -40,37 +43,9 @@ function App() {
           path="/"
           element={
             <>
-              {/* Barre de recherche */}
-              <div class="container py-4">
-                  <div class="row justify-content-center">
-                  <div class="col-lg-10">
-              <div class="d-flex align-items-center shadow rounded p-3 bg-white">
-        
-              <div class="px-3">
-                <input type="text"class="form-control"placeholder="Lieu"/>
-              </div>
-       
-              <div class="px-3">
-                <input type="text"class="form-control"placeholder="Type"/>
-              </div>
-       
-              <div class="px-3">
-                <input type="date"class="form-control"/>
-              </div>
+             <SearchBar/>
       
-              <div class="px-3">
-                <input type="date"class="form-control"/>
-              </div>
-       
-              <button class="btn btn-danger ms-3">
-                <i class="fas fa-search text-white"></i> Search
-              </button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
+      
 
               {/* Section des propriétés */}
               <div className="container mt-5">
