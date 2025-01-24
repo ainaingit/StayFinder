@@ -17,17 +17,27 @@ router.get('/properties', async (req, res) => {
       res.status(500).json({ error: 'Failed to retrieve properties' });
     }
   });
-  
-  // Ajouter une propriété
-  router.post('/properties', async (req, res) => {
+
+  router.post('/addpropertie', async (req, res) => {
     try {
+      console.log('Requête reçue:', req.body);  // Affiche la requête reçue pour vérification
+  
       const db = await connectToDatabase();
-      const result = await db.collection('proprietes').insertOne(req.body);
-      res.status(201).json(result.ops[0]); // Renvoie la propriété ajoutée
+      console.log("Connexion à la base de données réussie.");
+  
+      const result = await db.collection('properties').insertOne(req.body);
+      console.log("Résultat de l'insertion:", result);
+  
+      if (result && result.insertedId) {
+        res.status(201).json({ id: result.insertedId });
+      } else {
+        res.status(500).json({ error: 'No document was inserted' });
+      }
     } catch (err) {
-      console.error('Error adding property:', err);
-      res.status(500).json({ error: 'Failed to add property' });
+      console.error('Erreur lors de l\'ajout de la propriété:', err);
+      res.status(500).json({ error: 'Failed to add property', details: err.message });
     }
   });
+  
   
   module.exports = router;

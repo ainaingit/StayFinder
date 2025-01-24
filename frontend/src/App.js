@@ -6,6 +6,8 @@ import Contact from './components/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import DetailsProperty from './components/DetailsProperty';  // Importer le composant DetailsProperty
+import AddProperties from './components/AddProperties';
+import API_URL from './config'; // Importer la configuration de l'URL
 
 function App() {
   // Créer un état pour stocker les propriétés
@@ -14,7 +16,7 @@ function App() {
   // Fonction pour récupérer les propriétés depuis l'API
   const fetchProperties = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/properties'); // URL de votre API backend
+      const response = await fetch(`${API_URL}/properties`); // Utiliser l'URL centralisée
       const data = await response.json(); // Convertir la réponse en JSON
       setProperties(data); // Mettre à jour l'état avec les données récupérées
     } catch (error) {
@@ -38,12 +40,34 @@ function App() {
           element={
             <>
               {/* Section de recherche */}
-              <div className="container mt-5">
+              <div className="container py-4">
                 <div className="row justify-content-center">
-                  <div className="col-md-6">
-                    <div className="input-group">
-                      <input type="text" className="form-control" placeholder="Search for properties..." />
-                      <button className="btn btn-primary" type="button">Search</button>
+                  <div className="col-lg-10">
+                    <div className="d-flex align-items-center shadow rounded-pill p-2 bg-white">
+                      {/* Champ "Where" */}
+                      <div className="px-3 border-end">
+                        <span className="d-block fw-bold">Where</span>
+                        <span className="text-muted small">Search destinations</span>
+                      </div>
+                      {/* Champ "Check in" */}
+                      <div className="px-3 border-end">
+                        <span className="d-block fw-bold">Check in</span>
+                        <span className="text-muted small">Add dates</span>
+                      </div>
+                      {/* Champ "Check out" */}
+                      <div className="px-3 border-end">
+                        <span className="d-block fw-bold">Check out</span>
+                        <span className="text-muted small">Add dates</span>
+                      </div>
+                      {/* Champ "Who" */}
+                      <div className="px-3">
+                        <span className="d-block fw-bold">Who</span>
+                        <span className="text-muted small">Add guests</span>
+                      </div>
+                      {/* Bouton de recherche */}
+                      <button className="btn btn-danger rounded-circle ms-auto d-flex align-items-center justify-content-center" style={{ width: "40px", height: "40px" }}>
+                        <i className="fas fa-search text-white"></i>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -76,6 +100,9 @@ function App() {
           path="/property/:id"  // Utilise l'id dans l'URL pour afficher les détails
           element={<DetailsProperty properties={properties} />}
         />
+        
+        {/* Route d'ajout de propriétés */}
+        <Route path="/addproperties" element={<AddProperties />} />
       </Routes>
 
       <Footer />
