@@ -3,13 +3,14 @@ import Navbar from './components/Navbar';
 import Card from './components/Card';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import Booking from './components/booking' ;
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import DetailsProperty from './components/DetailsProperty';  // Importer le composant DetailsProperty
 import AddProperties from './components/AddProperties';
 import API_URL from './config'; // Importer la configuration de l'URL
 import SearchBar from './components/searchbar';
-
+import Login from './components/Login';
 function App() {
   // Créer un état pour stocker les propriétés
   const [properties, setProperties] = useState([]);
@@ -44,8 +45,6 @@ function App() {
           element={
             <>
              <SearchBar/>
-      
-      
 
               {/* Section des propriétés */}
               <div className="container mt-5">
@@ -66,6 +65,8 @@ function App() {
           }
         />
 
+        <Route path="/login" element={<Login />} />
+
         {/* Route de contact */}
         <Route path="/contact" element={<Contact />} />
 
@@ -73,6 +74,11 @@ function App() {
         <Route
           path="/property/:id"  // Utilise l'id dans l'URL pour afficher les détails
           element={<DetailsProperty properties={properties} />}
+        />
+        
+         <Route
+          path="/property/booking:id"  // Utilise l'id dans l'URL pour afficher les détails
+          element={<Booking properties={properties} />}
         />
         
         {/* Route d'ajout de propriétés */}

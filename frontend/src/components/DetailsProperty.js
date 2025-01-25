@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -72,7 +72,7 @@ const DetailsProperty = ({ properties }) => {
 
           {/* Bouton de réservation */}
           <div className="mt-4">
-            <button className="btn btn-danger w-100">Book Now</button>
+            <Link  to={`/property/booking/${property._id}`} className="btn btn-danger w-100">Book Now</Link>
           </div>
         </div>
 
