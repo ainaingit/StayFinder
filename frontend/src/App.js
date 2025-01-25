@@ -3,15 +3,18 @@ import Navbar from './components/Navbar';
 import Card from './components/Card';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import Booking from './components/booking' ;
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import DetailsProperty from './components/DetailsProperty';  // Importer le composant DetailsProperty
 import AddProperties from './components/AddProperties';
 import API_URL from './config'; // Importer la configuration de l'URL
-
+import SearchBar from './components/searchbar';
+import Login from './components/Login';
 function App() {
   // Créer un état pour stocker les propriétés
   const [properties, setProperties] = useState([]);
+
 
   // Fonction pour récupérer les propriétés depuis l'API
   const fetchProperties = async () => {
@@ -30,6 +33,7 @@ function App() {
   }, []);
 
   
+
   return (
     <div className="App">
       <Navbar />
@@ -40,37 +44,7 @@ function App() {
           path="/"
           element={
             <>
-              {/* Barre de recherche */}
-              <div class="container py-4">
-                  <div class="row justify-content-center">
-                  <div class="col-lg-10">
-              <div class="d-flex align-items-center shadow rounded p-3 bg-white">
-        
-              <div class="px-3">
-                <input type="text"class="form-control"placeholder="Lieu"/>
-              </div>
-       
-              <div class="px-3">
-                <input type="text"class="form-control"placeholder="Type"/>
-              </div>
-       
-              <div class="px-3">
-                <input type="date"class="form-control"/>
-              </div>
-      
-              <div class="px-3">
-                <input type="date"class="form-control"/>
-              </div>
-       
-              <button class="btn btn-danger ms-3">
-                <i class="fas fa-search text-white"></i> Search
-              </button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
+             <SearchBar/>
 
               {/* Section des propriétés */}
               <div className="container mt-5">
@@ -91,6 +65,8 @@ function App() {
           }
         />
 
+        <Route path="/login" element={<Login />} />
+
         {/* Route de contact */}
         <Route path="/contact" element={<Contact />} />
 
@@ -98,6 +74,11 @@ function App() {
         <Route
           path="/property/:id"  // Utilise l'id dans l'URL pour afficher les détails
           element={<DetailsProperty properties={properties} />}
+        />
+        
+         <Route
+          path="/property/booking:id"  // Utilise l'id dans l'URL pour afficher les détails
+          element={<Booking properties={properties} />}
         />
         
         {/* Route d'ajout de propriétés */}

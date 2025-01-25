@@ -1,93 +1,63 @@
 [
     {
-        "id": 1,
-        "name": "Appartement Cosy à Antananarivo",
-        "location": "Antananarivo, Madagascar",
-        "price": 120,
-        "image": "https://example.com/image1.jpg",
-        "latitude": -18.8792,
-        "longitude": 47.5079
+      "id": "1",
+      "name": "Villa Sur la Plage",
+      "location": "Plage de Nice, France",
+      "price": 150,
+      "image": "https://example.com/images/villa1.jpg",
+      "latitude": 43.7102,
+      "longitude": 7.2620,
+      "type": "Villa",
+      "description": "Une belle villa avec vue sur la mer et accès direct à la plage.",
+      "amenities": ["Wi-Fi", "Climatisation", "Piscine", "Parking"]
     },
     {
-        "id": 2,
-        "name": "Loft Moderne à Nosy Be",
-        "location": "Nosy Be, Madagascar",
-        "price": 250,
-        "image": "https://example.com/image2.jpg",
-        "latitude": -13.3306,
-        "longitude": 48.2736
+      "id": "2",
+      "name": "Appartement Parisien",
+      "location": "Paris, France",
+      "price": 100,
+      "image": "https://example.com/images/appartement1.jpg",
+      "latitude": 48.8566,
+      "longitude": 2.3522,
+      "type": "Appartement",
+      "description": "Appartement moderne avec 2 chambres, idéal pour les voyageurs en famille.",
+      "amenities": ["Wi-Fi", "Ascenseur", "Cuisine équipée"]
     },
     {
-        "id": 3,
-        "name": "Villa de Luxe à Toamasina",
-        "location": "Toamasina, Madagascar",
-        "price": 450,
-        "image": "https://example.com/image3.jpg",
-        "latitude": -18.1416,
-        "longitude": 49.4020
+      "id": "3",
+      "name": "Chalet Montagneux",
+      "location": "Chamonix, France",
+      "price": 200,
+      "image": "https://example.com/images/chalet1.jpg",
+      "latitude": 45.9237,
+      "longitude": 6.8694,
+      "type": "Chalet",
+      "description": "Chalet en montagne, parfait pour les amateurs de ski et de nature.",
+      "amenities": ["Wi-Fi", "Cheminée", "Spa"]
     },
     {
-        "id": 4,
-        "name": "Condo en bord de mer à Mahajanga",
-        "location": "Mahajanga, Madagascar",
-        "price": 300,
-        "image": "https://example.com/image4.jpg",
-        "latitude": -15.7271,
-        "longitude": 46.3257
+      "id": "4",
+      "name": "Studio au Centre-Ville",
+      "location": "Lyon, France",
+      "price": 75,
+      "image": "https://example.com/images/studio1.jpg",
+      "latitude": 45.7640,
+      "longitude": 4.8357,
+      "type": "Studio",
+      "description": "Petit studio idéal pour un séjour en ville avec toutes les commodités à proximité.",
+      "amenities": ["Wi-Fi", "Cuisine équipée", "Machine à laver"]
     },
     {
-        "id": 5,
-        "name": "Appartement spacieux à Antsirabe",
-        "location": "Antsirabe, Madagascar",
-        "price": 200,
-        "image": "https://example.com/image5.jpg",
-        "latitude": -19.8667,
-        "longitude": 47.0333
-    },
-    {
-        "id": 6,
-        "name": "Penthouse à Fianarantsoa",
-        "location": "Fianarantsoa, Madagascar",
-        "price": 600,
-        "image": "https://example.com/image6.jpg",
-        "latitude": -21.4531,
-        "longitude": 47.0853
-    },
-    {
-        "id": 7,
-        "name": "Cottage charmant à Ambalavao",
-        "location": "Ambalavao, Madagascar",
-        "price": 150,
-        "image": "https://example.com/image7.jpg",
-        "latitude": -21.8236,
-        "longitude": 47.5167
-    },
-    {
-        "id": 8,
-        "name": "Studio moderne à Toliara",
-        "location": "Toliara, Madagascar",
-        "price": 220,
-        "image": "https://example.com/image8.jpg",
-        "latitude": -23.3492,
-        "longitude": 43.6667
-    },
-    {
-        "id": 9,
-        "name": "Maison de campagne à Mahitsy",
-        "location": "Mahitsy, Madagascar",
-        "price": 350,
-        "image": "https://example.com/image9.jpg",
-        "latitude": -18.5667,
-        "longitude": 47.0167
-    },
-    {
-        "id": 10,
-        "name": "Cabane au bord du lac à Diego Suarez",
-        "location": "Diego Suarez, Madagascar",
-        "price": 400,
-        "image": "https://example.com/image10.jpg",
-        "latitude": -12.3600,
-        "longitude": 49.0020
+      "id": "5",
+      "name": "Maison de Campagne",
+      "location": "Bordeaux, France",
+      "price": 120,
+      "image": "https://example.com/images/maison1.jpg",
+      "latitude": 44.8378,
+      "longitude": -0.5792,
+      "type": "Maison",
+      "description": "Maison traditionnelle avec grand jardin, idéale pour des vacances tranquilles.",
+      "amenities": ["Wi-Fi", "Jardin", "Barbecue"]
     }
   ]
   

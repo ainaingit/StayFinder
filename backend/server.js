@@ -6,6 +6,7 @@ const app = express();
 
 // Importer le contrôleur des propriétés
 const propertiesController = require('./controllers/propertiesController');
+const userController = require('./controllers/usercontroller');
 
 // Middleware pour parser le JSON et les données encodées
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use(cors());
 
 // Utiliser les routes du contrôleur des propriétés
 app.use('/api', propertiesController);
+app.use('/api', userController);
 
 // Middleware pour gérer les erreurs globales
 app.use((err, req, res, next) => {
